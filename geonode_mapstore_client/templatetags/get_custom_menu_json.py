@@ -121,7 +121,7 @@ def get_base_right_topbar_menu(context):
 
 
 @register.simple_tag(takes_context=True)
-def get_user_menu(context):
+def custom_get_user_menu(context):
 
     is_mobile = _is_mobile_device(context)
     user = context.get('request').user
@@ -172,9 +172,13 @@ def get_user_menu(context):
             }
         ]
 
+    username = user.last_name + " " + user.first_name
+    if not username.strip():
+        username = user.username
+
     profile = {
         # get src of user avatar
-        "image": avatar_url(user),
+        "label": username,
         "type": "dropdown",
         "className": "gn-user-menu-dropdown",
         "items": [
@@ -238,7 +242,7 @@ def get_user_menu(context):
 
 
 @register.simple_tag
-def get_menu_json(placeholder_name):
+def get_custom_menu_json(placeholder_name):
     menus = {
         m: MenuItem.objects.filter(menu=m).order_by('order')
         for m in Menu.objects.filter(placeholder__name=placeholder_name)

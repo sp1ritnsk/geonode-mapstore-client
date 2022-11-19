@@ -1,29 +1,298 @@
-{% load static %}
-<header class="gn-main-header">
-    {% include './brand_navbar.html'  with id='gn-brand-navbar' %}
-</header>
-<div class="gn-main-header-placeholder"></div>
-{% if show_hero %}
-    {% include './hero.html' %}
-{% endif %}
+{% load static %} 
+{% load i18n %} 
+{% load get_custom_menu_json %}
+{% get_current_language as LANGUAGE %} 
+{% get_language_info for LANGUAGE as lang_info %}
+{% custom_get_user_menu as USER_MENU %}
 
-{% include './topbar.html' with id='gn-topbar' %}
+<header class="gn-main-header nsdi-header d-flex justify-content-between">
+  <div class="nsdi-navbar d-flex justify-content-between align-items-center">
+    <a
+      href="/"
+      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light active"
+    >
+      {% trans "Main" %}
+    </a>
+    <div
+      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light dropdown"
+    >
+      <div
+        class="dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        {% trans "Catalog data" %}
+      </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/catalogue/#/search/?f=dataset"
+          >{% trans "Datasets" %}</a
+        >
+        <a class="dropdown-item" href="/catalogue/#/search/?f=document"
+          >{% trans "Documents" %}</a
+        >
+        <a class="dropdown-item" href="/services/?limit=5">{% trans "Remote services" %}</a>
+      </div>
+    </div>
+    <a
+      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+      href="/catalogue/#/search/?f=map"
+    >
+      {% trans "Maps" %}
+    </a>
+    <a
+      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+      href="/catalogue/#/search/?f=geostory"
+    >
+      {% trans "Geostories" %}
+    </a>
+    <a
+      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+      href="/catalogue/#/search/?f=dashboard"
+    >
+      {% trans "Dashboards" %}
+    </a>
+  </div>
+  <div class="nsdi-actionbar d-flex justify-content-end align-items-center">
+    <div class="dropdown" id="gn-language-selector-dropdown">
+      <div
+        class="nsdi-action-lang d-flex align-items-center justify-content-between"
+        id="gn-language-selector"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        type="button"
+        data-toggle="dropdown"
+      >
+        <img
+          src="/static/img/world-icon.png"
+          alt=""
+          class="nsdi-action-lang-world-icon"
+        />
+        <div
+          class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-white"
+        >
+          {% if lang_info.code == 'ru' %} 
+            РУС 
+          {% elif lang_info.code == 'kk' %}
+            КАЗ 
+          {% endif %}
+        </div>
+        <img
+          src="/static/img/caret-down.png"
+          alt=""
+          class="nsdi-action-lang-caret-icon"
+        />
+      </div>
+
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="gn-language-selector">
+        {% for lang in LANGUAGES %}
+            {% if lang.0 != LANGUAGE %} 
+                <li>
+                    <a style="cursor:pointer;" data-lang-code="{{lang.0}}">{{ lang.1 }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div
+      class="nsdi-actionbar-action d-flex justify-content-between align-items-center"
+    >
+      {% if user.is_authenticated %}
+      <div></div>
+      <ul
+        class="nsdi-action-username"
+      >
+            {% for menu_item in USER_MENU %}
+                {% include './menu_item.html' with menu_item=menu_item align_right=True %}
+            {% endfor %}
+          
+          
+        </ul>
+      <!-- </div> -->
+      {% else %}
+      <a
+        class="nsdi-action-register nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-white"
+        href="/account/signup"
+      >
+        {% trans "Register" %}
+      </a>
+      <a
+        class="nsdi-action-login nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black d-flex justify-content-center align-items-center"
+        href="/account/login"
+      >
+        {% trans "Log in" %}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <form id="gn-language-selector-form" action="/i18n/setlang/" method="post" style="display:none;">
+    {% csrf_token %}
+    <input name="language" type="hidden" value="{{ LANGUAGE }}"/>
+  </form>
+
+  <script>
+    (function() {
+        const languageForm = document.querySelector('#gn-language-selector-form');
+        const languageInput = languageForm.querySelector('input[name="language"]');
+        
+        const languageNodes = document.querySelectorAll('#gn-language-selector-dropdown .dropdown-menu li a');
+
+        for (var i = 0; i < languageNodes.length; i++) {
+            languageNodes[i].addEventListener('click', function(event) {
+                const language = event.target.getAttribute('data-lang-code');
+                if (language) {
+                    languageInput.value = language;
+                    languageForm.action = '/i18n/setlang/?next=' + (window.location && (window.location.pathname + window.location.hash) || '/');
+                    languageForm.submit();
+                }
+            });
+        }
+    })();
+  </script>
+</header>
+<!-- <div class="gn-main-header-placeholder"></div> -->
+
+<style>
+  .gn-user-menu-dropdown > button {
+    background-color: transparent !important;
+    border: none !important;
+    color: white !important;
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+  }
+  .gn-user-menu-dropdown > button::after {
+    display: none;
+  }
+  .gn-user-menu-dropdown > button:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .nsdi-actionbar-action,
+  .nsdi-action-username,
+  .nsdi-action-drowndown-button {
+    height: 100%;
+  }
+
+  .nsdi-action-username {
+    margin: 0 !important;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+  }
+  .msgapi .nsdi-action-drowndown-button {
+    align-items: center;
+    display: flex !important;
+  }
+  .nsdi-actionbar-action {
+    margin-left: 3.125rem;
+    gap: 3.125rem;
+  }
+
+  .nsdi-actionbar > .dropdown.open > ul.dopdown-menu {
+    min-width: auto;
+    width: 100%;
+  }
+  .msgapi .gn-main-header {
+    position: static;
+  }
+
+  .modal-header {
+    display: block;
+    background-color: #6F7EF2;
+  }
+
+  /* .msgapi .modal.in .modal-dialog {
+    width: 43.75rem;
+    max-width: 43.75rem;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .msgapi .modal-header {
+    background-color: white;
+    padding-top: 3.75rem;
+    padding-left: 4.375rem;
+    position: relative;
+    justify-content: start;
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .nsdi-modal-close-button {
+    position: absolute;
+    right: 1.5625rem;
+    top: 1.6875rem;
+    background: url("/static/img/circle-close.png");
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    border: none;
+  }
+  .msgapi .modal-body {
+    padding: 1.5625rem 4.375rem 2rem 4.375rem;
+  }
+  .nsdi-modal-input {
+    margin-top: 1.4375rem !important;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    width: 100%;
+    height: 3.75rem;
+    padding-left: 4rem;
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+  }
+  .nsdi-modal-input::placeholder {
+    color: #a3a3a3;
+  }
+  .nsdi-modal-input.email-icon {
+    background-image: url("/static/img/mail-icon.png");
+  }
+  .nsdi-modal-input.user-icon {
+    background-image: url("/static/img/user-icon.png");
+  }
+  .nsdi-modal-input.key-icon {
+    background-image: url("/static/img/key-icon.png");
+  }
+  .nsdi-modal-button-register {
+    margin-top: 1.4375rem !important;
+    border: 2px solid #e2e2e2;
+    border-radius: 5px;
+    width: 100%;
+    height: 3.75rem;
+  }
+  .nsdi-modal-already-block {
+    margin-top: 3rem;
+  }
+  .nsdi-modal-already-link {
+    color: #6f7ef2;
+  } */
+</style>
 
 <script>
-    (function () {
-        const mainHeader = document.querySelector('.gn-main-header');
-        const mainHeaderPlaceholder = document.querySelector('.gn-main-header-placeholder');
-        const topbar = document.querySelector('#gn-topbar');
-        function resize() {
-            if (mainHeaderPlaceholder && mainHeader) {
-                mainHeaderPlaceholder.style.height = mainHeader.clientHeight + 'px';
-            }
-            if (topbar && mainHeader) {
-                topbar.style.top = mainHeader.clientHeight + 'px';
-            }
-        }
-        window.addEventListener('resize', resize);
-        window.addEventListener('DOMContentLoaded', resize);
-        resize();
-    })();
+  (function () {
+    const mainHeader = document.querySelector(".gn-main-header");
+    const mainHeaderPlaceholder = document.querySelector(
+      ".gn-main-header-placeholder"
+    );
+    const topbar = document.querySelector("#gn-topbar");
+    function resize() {
+      if (mainHeaderPlaceholder && mainHeader) {
+        mainHeaderPlaceholder.style.height = mainHeader.clientHeight + "px";
+      }
+      if (topbar && mainHeader) {
+        topbar.style.top = mainHeader.clientHeight + "px";
+      }
+    }
+    window.addEventListener("resize", resize);
+    window.addEventListener("DOMContentLoaded", resize);
+    resize();
+  })();
 </script>

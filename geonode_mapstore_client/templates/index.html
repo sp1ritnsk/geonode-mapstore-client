@@ -1,71 +1,173 @@
-{% load static %}
-{% load client_version %}
-<!DOCTYPE html>
-<html class="msgapi">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-        <link href="{% static 'mapstore/dist/themes/geonode.css' %}?{% client_version %}" rel="stylesheet" />
-        <title>{{ SITE_NAME }}</title>
-        <link rel="shortcut icon" href="{% static 'geonode/img/favicon.ico' %}" />
-        {% include './geonode-mapstore-client/snippets/loader_style.html' %}
+{% extends "base_with_footer.html" %} 
+{% load i18n %} 
+{% block middle %}
 
-        {% block custom_theme %}
-            {% include './geonode-mapstore-client/snippets/custom_theme.html' %}
-        {% endblock %}
+<div class="nsdi-main">
+  <div class="nsdi-main-background d-flex flex-column justify-content-center">
+    <div
+      class="nsdi-main-background-title nsdi-font-size-64 nsdi-font-weight-700 nsdi-font-color-white"
+    >
+      {% trans "Project name" %}
+    </div>
+    <div
+      class="nsdi-main-background-subtitle nsdi-font-size-24 nsdi-font-weight-500 nsdi-font-color-white"
+    >
+      {% trans "Project subname" %}
+    </div>
+    <div class="nsdi-main-background-buttons d-flex">
+      <div
+        class="nsdi-main-background-button-first d-flex nsdi-font-size-18 nsdi-font-weight-500"
+      >
+        {% trans "Go to catalog data" %}
+      </div>
+      <div
+        class="nsdi-main-background-button-second d-flex nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-white"
+      >
+        {% trans "Create own map" %}
+      </div>
+    </div>
+  </div>
+  <div class="nsdi-main-numbers d-flex justify-content-between">
+    <div class="nsdi-main-number-item text-center">
+      <div
+        class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
+      >
+        230+
+      </div>
+      <div
+        class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
+      >
+        созданных слоев
+      </div>
+    </div>
 
-        {% block extra_style %}
-        {% endblock %}
-    </head>
-    <body class="msgapi ms2" data-ms2-container="ms2">
-        <div class="gn-page-wrapper {% if request.user_agent.is_mobile %}gn-mobile{% else %}gn-desktop{% endif %}">
-            <div class="gn-theme gn-homepage">
-                {% include './geonode-mapstore-client/_geonode_config.html' %}
-                {% block header %}
-                    {% include './geonode-mapstore-client/snippets/header.html' with show_hero=True %}
-                {% endblock %}
-    
-                {% block content %}
-                    {% comment %}
-                    <!-- example of content extension -->
-                    <div class="gn-container">
-                        <div class="gn-content">
-                            <!-- My custom content -->
-                        </div>
-                    </div>
-                    {% endcomment %}
-                {% endblock %}
-    
-                {% block container %}
-                    <div id="container">
-                        <div class="gn-main-event-container">
-                            <div class="gn-main-event-content">
-                                <div class="gn-main-loader"></div>
-                                <div class="gn-main-event-text"></div>
-                            </div>
-                        </div>
-                    </div>
-                {% endblock %}
-    
-                {% block ms_scripts %}
-                    <script id="gn-script" src="{% static 'mapstore/dist/js/gn-home.js' %}?{% client_version %}"></script>
-                {% endblock %}
-    
-                {% block footer %}
-                    {% include './geonode-mapstore-client/snippets/footer.html' %}
-                {% endblock %}
-    
-                {% block scripts %}
-                    <script src="{% static "lib/js/jquery.min.js" %}"></script>
-                    <script src="{% static "lib/js/bootstrap.min.js" %}"></script>
-                    <script type="text/javascript">
-                        // enable dropdown functionalities
-                        $('.dropdown-toggle').dropdown();
-                    </script>
-                {% endblock %}
-            </div>
+    <div class="nsdi-main-number-item text-center">
+      <div
+        class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
+      >
+        230+
+      </div>
+      <div
+        class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
+      >
+        созданных слоев
+      </div>
+    </div>
+
+    <div class="nsdi-main-number-item text-center">
+      <div
+        class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
+      >
+        230+
+      </div>
+      <div
+        class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
+      >
+        созданных слоев
+      </div>
+    </div>
+
+    <div class="nsdi-main-number-item text-center">
+      <div
+        class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
+      >
+        230+
+      </div>
+      <div
+        class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
+      >
+        созданных слоев
+      </div>
+    </div>
+  </div>
+
+  <div class="nsdi-main-topmap">
+    <div
+      class="nsdi-main-topmap-title nsdi-font-size-24 nsdi-font-weight-500 nsdi-font-color-black text-center"
+    >
+      {% trans "Top of maps and layers" %}
+    </div>
+    <div class="nsdi-main-topmap-switcher d-flex">
+      <div
+        class="nsdi-main-topmap-switcher-last nsdi-font-size-18 nsdi-font-weight-500"
+      >
+        {% trans "Last of tops" %}
+      </div>
+      <div
+        class="nsdi-main-topmap-switcher-popular nsdi-font-size-18 nsdi-font-weight-500"
+      >
+        {% trans "Popular of tops" %}
+      </div>
+    </div>
+
+    <div class="nsdi-main-topmap-list" id="nsdi-main-topmap-list"></div>
+
+    <div
+      class="nsdi-main-topmap-link text-center nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
+    >
+      {% trans "Show all" %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .nsdi-header {
+    background: transparent !important;
+    position: absolute !important;
+  }
+  #wrap {
+    min-height: calc(100vh - 120px);
+  }
+  .nsdi-main-background {
+    height: 100vh;
+  }
+</style>
+{% endblock %} {% block extra_script %}
+<script>
+  $.ajax({
+    url: "/api/featured",
+  }).done(function (data) {
+    console.log(data);
+    data.objects.forEach(element => {
+
+      let title = element.title;
+      let abstract = element.abstract;
+      let fullDate = new Date(element.date);
+      let thumbnailUrl = element.thumbnail_url;
+      let link = `/catalogue/#/${element.csw_type}/${element.id}`;
+      
+      let date = fullDate.getDate() + "." + fullDate.getMonth() + "." + fullDate.getFullYear();
+
+      let listItem = `
+      <a class="nsdi-main-topmap-list-item" href="${link}">
+        <img
+          src="${thumbnailUrl}"
+          class="nsdi-main-topmap-list-item-img"
+        />
+        <div class="nsdi-main-topmap-list-item-info">
+          <div
+            class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
+          >
+            ${title}
+          </div>
+          <div
+            class="nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black"
+          >
+            ${abstract}
+          </div>
+          <div
+            class="nsdi-main-topmap-list-item-info-date nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black d-flex align-items-center"
+          >
+            ${date}
+          </div>
         </div>
-    </body>
-</html>
+      </a>
+      `;
+
+      $('#nsdi-main-topmap-list').append($.parseHTML(listItem));
+
+    });
+    
+  });
+</script>
+{% endblock extra_script %}

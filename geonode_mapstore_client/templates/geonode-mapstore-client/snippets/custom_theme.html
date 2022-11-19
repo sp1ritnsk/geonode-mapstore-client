@@ -5,11 +5,10 @@
     {% endblock %}
 </style>
 {% block content %}
-    {% comment %}
     <!-- example of custom theme -->
     <style>
         /* structure of the selector for a custom theme .gn-theme-{variant} */
-        .msgapi .gn-theme-custom {
+        .msgapi {
             /* this variables should be generated from lesscss files */
             --gn-font-family-sans-serif: 'Montserrat', sans-serif;
             --gn-font-family-serif: Georgia, 'Times New Roman', Times, serif;
@@ -26,7 +25,7 @@
             --gn-placeholder-bg: #dddddd;
             --gn-disabled-color: #aaaaaa;
             --gn-disabled-bg: #dddddd;
-            --gn-primary: #397AAB;
+            --gn-primary: #6F7EF2;
             --gn-info: #639fcc;
             --gn-success: #58cf80;
             --gn-warning: #ebbc35;
@@ -36,8 +35,8 @@
             --gn-success-contrast: #ffffff;
             --gn-warning-contrast: #ffffff;
             --gn-danger-contrast: #ffffff;
-            --gn-link-color: #397AAB;
-            --gn-link-hover-color: #1b4d74;
+            --gn-link-color: #6F7EF2;
+            --gn-link-hover-color: #6F7EF2;
             --gn-image-color: #333333;
             --gn-image-bg: #f2f2f2;
             --gn-focus-color: rgba(57, 122, 171, 0.4);
@@ -81,19 +80,19 @@
             --gn-button-badge-color: #000000;
             --gn-button-badge-bg: #ffffff;
             --gn-button-primary-color: #ffffff;
-            --gn-button-primary-bg: #397AAB;
-            --gn-button-primary-border-color: #397AAB;
+            --gn-button-primary-bg: #6F7EF2;
+            --gn-button-primary-border-color: none;
             --gn-button-primary-focus-color: #ffffff;
-            --gn-button-primary-focus-bg: #2c5f85;
+            --gn-button-primary-focus-bg: #6F7EF2;
             --gn-button-primary-focus-border-color: #19364b;
             --gn-button-primary-hover-color: #ffffff;
-            --gn-button-primary-hover-bg: #2c5f85;
+            --gn-button-primary-hover-bg: #6F7EF2;
             --gn-button-primary-hover-border-color: #2a597d;
             --gn-button-primary-active-color: #ffffff;
-            --gn-button-primary-active-bg: #2c5f85;
+            --gn-button-primary-active-bg: #6F7EF2;
             --gn-button-primary-active-border-color: #2a597d;
             --gn-button-primary-active-hover-color: #ffffff;
-            --gn-button-primary-active-hover-bg: #234c6a;
+            --gn-button-primary-active-hover-bg: #6F7EF2;
             --gn-button-primary-active-hover-border-color: #19364b;
             --gn-button-primary-disabled-color: #ffffff;
             --gn-button-primary-disabled-bg: #93a8b7;
@@ -208,6 +207,17 @@
             --gn-main-bg: #ffffff;
             --gn-main-border-color: #dddddd;
         }
+
+        .msgapi .btn {
+            border: none;
+        }
+
+        .msgapi #navigationBar-container > .btn-primary {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        .msgapi #navigationBar-container > .btn-success {
+            background-color: #6F7EF2;
+        }
     </style>
-    {% endcomment %}
 {% endblock %}

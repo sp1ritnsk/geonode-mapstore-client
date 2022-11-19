@@ -1,0 +1,96 @@
+{
+    "locale": "kk-KZ",
+    "messages": {
+        "geostory": {
+            "geoNode": "КДБ АЖ"
+        },
+        "mediaEditor": {
+            "imageList": {
+                "emptyList": "Бұл сұраныс бойынша нәтижелер жоқ. Сүзгіні өзгертуге тырысыңыз немесе жоғарғы оң жақ бұрыштағы кірістен басқа қызметті таңдаңыз."
+            },
+            "videoList": {
+                "emptyList": "Бұл сұраныс бойынша нәтижелер жоқ. Сүзгіні өзгертуге тырысыңыз немесе жоғарғы оң жақ бұрыштағы кірістен басқа қызметті таңдаңыз."
+            },
+            "mapList": {
+                "emptyList": "Бұл сұраныс бойынша нәтижелер жоқ. Сүзгіні өзгертуге тырысыңыз немесе жоғарғы оң жақ бұрыштағы кірістен басқа қызметті таңдаңыз."
+            }
+        },
+        "gnhome": {
+            "description": "<h1>КДБ АЖ</h1><p>геокеңістіктік деректермен және карталармен алмасу.</p>",
+            "orderBy": "бойынша сұрыптау",
+            "mostRecent": "соңғы",
+            "lessRecent": "ертерек",
+            "aZ": "А Я",
+            "zA": "Я А",
+            "mostPopular": "Ең танымал",
+            "data": "Деректер",
+            "layers": "Қабаттар",
+            "documents": "Құжаттар ",
+            "remoteServices": "Қашықтағы қызметтер",
+            "maps": "Карталар",
+            "about": "Туралы",
+            "people": "Адамдар",
+            "groups": "Топтар",
+            "groupsCategories": "Топтық категориялар",
+            "view": "Көру",
+            "viewLayer": "Қабат көрінісі",
+            "viewMap": "Карта көрінісі",
+            "viewGeoStory": "GeoStory көрінісі",
+            "viewDocument": "Құжатты қарау",
+            "viewImage": "Суретті көру",
+            "viewVideo": "Бейне көру",
+            "author": "Автор",
+            "publication": "Басылым",
+            "creation": "Құру",
+            "category": "Санат",
+            "categories": "Санаттар",
+            "noPublicContentTitle": "GeoNode-ге қош келдіңіз",
+            "noPublicContentContent": "Бұл каталогта жалпыға қолжетімді ресурстар жоқ. <br/> Өтінемін <a href=\"/account/signup/?next=/\">тіркеліңіз</a> немесе мазмұнды көру үшін <a href=\"/account/login/?next=/\">жүйеге кіріңіз</a>.",
+            "noContentYetTitle": "GeoNode-ге қош келдіңіз",
+            "noContentYetContent": "Бұл каталогта әлі жарияланған мазмұн жоқ. <br/> Біз оны ең жақсы ресурстармен толтыру үшін жұмыс істеп жатырмыз. <br/><br/>Бізбен бірге қалыңыз!",
+            "noResultsWithFilterTitle": "Нәтиже жоқ",
+            "noResultsWithFilterContent": "Таңдалған сүзгілер бойынша нәтижелер жоқ. <br/> Барлық сүзгілерді тазалап, жаңа сұраумен әрекетті қайталаңыз.",
+            "register": "Реестр",
+            "signIn": "Кіру",
+            "admin": "Әкімші",
+            "logOut": "Шығу",
+            "terms": "Терминдер",
+            "privacy": "Құпиялылық",
+            "extent": "Ақпаратты сақтаушының үздіксіз аумағы.",
+            "enableFilterByExtent": "Ақпаратты сақтаушының үздіксіз аумағы бойынша сүзгіні қосу",
+            "advancedSearch": "Кеңейтілген іздеу",
+            "apply": "Қолдану",
+            "clearFilters": "Сүзгілерді тазалау",
+
+            "categoriesPlaceholder": "Санаттарды таңдаңыз",
+            "resourceTypes": "Ресурстар типтері",
+            "resourceTypesPlaceholder": "Ресурстар типтерін таңдау",
+            "keywords": "Кілт сөздер",
+            "keywordsPlaceholder": "Кілт сөздерді таңдаңыз",
+            "regions": "Аймақтар",
+            "regionsPlaceholder": "Аймақтарды таңдау",
+            "owners": "Меншік иелері",
+            "ownersPlaceholder": "Меншік иелерін таңдау",
+            "profile": "Пайдаланушы опциялары",
+            "recentActivity": "Соңғы әрекет",
+            "favorites": "Таңдаулы",
+            "inbox": "Қорап",
+            "geoServer": "GeoServer",
+            "help": "Көмек",
+            "uploadLayer": "Қабатты жүктеу",
+            "uploadDocument": "Құжатты жүктеу",
+            "addRemoteService": "Қашықтағы қызметті қосыңыз",
+            "exploreMaps": "Карталарды зерттеу",
+            "createMap": "Картаны жасау",
+            "apps": "Қолданбалар",
+            "announcements": "Хабарламалар",
+            "inviteUsers": "Пайдаланушыларды шақыру",
+            "addUser": "Пайдаланушы қосу",
+            "createGroup": "Топ құру",
+            "developers": "Әзірлеушілер",
+            "customFilterExample": "Пайдаланушының сүзгісі (жаһандық)",
+            "copiedResourceUrl": "Ресурстың URL мекенжайы көшірілді!",
+            "copyResourceUrl": "Ресурстың URL мекенжайын көшіру"
+        }
+    }
+}

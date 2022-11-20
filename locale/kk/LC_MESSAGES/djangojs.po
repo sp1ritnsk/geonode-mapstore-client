@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-20 06:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "CRS:84"
+msgstr ""
+
+msgid "EPSG:4326"
+msgstr ""
+
+msgid "urn:ogc:def:crs:EPSG::4326"
+msgstr ""
+
+msgid "urn:ogc:def:crs:EPSG:6.6:4326"
+msgstr ""
+
+msgid "urn:ogc:def:crs:OGC:1.3:CRS84"
+msgstr ""
+
+msgid "urn:ogc:def:crs:OGC:2:84"
+msgstr ""
+
+msgid "http://www.opengis.net/gml/srs/epsg.xml#4326"
+msgstr ""
+
+msgid "urn:x-ogc:def:crs:EPSG:4326"
+msgstr ""
+
+msgid "visible"
+msgstr ""
+
+msgid "bgcolor"
+msgstr ""
+
+msgid "bordercolor"
+msgstr ""
+
+msgid "borderwidth"
+msgstr ""
+
+msgid "thickness"
+msgstr ""
+
+msgid "autorange"
+msgstr ""
+
+msgid "range"
+msgstr ""
+
+msgid "bingroup"
+msgstr ""
+
+msgid "not-basic"
+msgstr ""
+
+msgid "invalid-input"
+msgstr ""
+
+msgid "overflow"
+msgstr ""
+
+msgid "-"
+msgstr ""
+
+msgid "translatestart"
+msgstr ""
+
+msgid "translateend"
+msgstr ""
+
+msgid "translating"
+msgstr ""
+
+msgid "trailingComments"
+msgstr ""
+
+msgid "leadingComments"
+msgstr ""
+
+msgid "innerComments"
+msgstr ""
+
+msgid "Error on reading print result: "
+msgstr ""
+
+msgid "Error on printing: "
+msgstr ""
+
+msgid "expanded"
+msgstr ""
+
+msgid "geostory"
+msgstr ""
+
+msgid "dashboard"
+msgstr ""

@@ -1,0 +1,10 @@
+.gn-resource-card.active.gn-card-type-list.rounded-0 {
+    border: 2px solid #6F7EF2;
+    border-radius: 5px;
+    outline-color: inherit;
+    box-shadow: none;
+    color: #ffffff;
+}
+.card-resource-list {
+    color: #000;
+}

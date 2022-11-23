@@ -7,53 +7,60 @@
 
 <header class="gn-main-header nsdi-header d-flex justify-content-between">
   <div class="nsdi-navbar d-flex justify-content-between align-items-center">
-    <a
-      href="/"
-      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light active"
-    >
-      {% trans "Main" %}
-    </a>
-    <div
-      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light dropdown"
-    >
-      <div
-        class="dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        {% trans "Catalog data" %}
-      </div>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="/catalogue/#/search/?f=dataset"
-          >{% trans "Datasets" %}</a
+    <nav class="navbar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="headerMenu">
+        <a
+          href="/"
+          class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light active"
         >
-        <a class="dropdown-item" href="/catalogue/#/search/?f=document"
-          >{% trans "Documents" %}</a
+          {% trans "Main" %}
+        </a>
+        <div
+          class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light dropdown"
         >
-        <a class="dropdown-item" href="/services/?limit=5">{% trans "Remote services" %}</a>
+          <div
+            class="dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            {% trans "Catalog data" %}
+          </div>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/catalogue/#/search/?f=dataset"
+              >{% trans "Datasets" %}</a
+            >
+            <a class="dropdown-item" href="/catalogue/#/search/?f=document"
+              >{% trans "Documents" %}</a
+            >
+            <a class="dropdown-item" href="/services/?limit=5">{% trans "Remote services" %}</a>
+          </div>
+        </div>
+        <a
+          class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+          href="/catalogue/#/search/?f=map"
+        >
+          {% trans "Maps" %}
+        </a>
+        <a
+          class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+          href="/catalogue/#/search/?f=geostory"
+        >
+          {% trans "Geostories" %}
+        </a>
+        <a
+          class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
+          href="/catalogue/#/search/?f=dashboard"
+        >
+          {% trans "Dashboards" %}
+        </a>
       </div>
-    </div>
-    <a
-      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
-      href="/catalogue/#/search/?f=map"
-    >
-      {% trans "Maps" %}
-    </a>
-    <a
-      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
-      href="/catalogue/#/search/?f=geostory"
-    >
-      {% trans "Geostories" %}
-    </a>
-    <a
-      class="nsdi-navbar-item nsdi-font-size-18 nsdi-font-weight-400 nsdi-font-color-gray-light"
-      href="/catalogue/#/search/?f=dashboard"
-    >
-      {% trans "Dashboards" %}
-    </a>
+    </nav>
   </div>
   <div class="nsdi-actionbar d-flex justify-content-end align-items-center">
     <div class="dropdown" id="gn-language-selector-dropdown">

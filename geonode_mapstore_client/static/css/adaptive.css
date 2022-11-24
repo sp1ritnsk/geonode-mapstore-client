@@ -59,7 +59,33 @@ img {
 .nsdi-main-topmap-switcher-last, .nsdi-main-topmap-switcher-popular {
     cursor: pointer;
 }
+.gn-user-menu-dropdown > button img {
+    max-width: 45px;
+}
+.h3, h3 {
+    margin-top: 15px;
+}
+.nsdi-main-background-button-first a {
+    color: #000;
+    text-decoration: none;
+}
+.nsdi-main-background-button-second a {
+    color: #fff;
+    text-decoration: none;
+}
+.nsdi-main-background-button-first a:hover{
+    color: #000;
+}
+.nsdi-main-background-button-second a:hover {
+    color: #fff;
+}
+.nsdi-footer-navbar-item {
+    text-decoration: none;
+}
 @media screen and (max-width: 1200px) {
+    .btn {
+        white-space: normal;
+    }
     .nsdi-signup-form {
         padding: 3rem 6rem;
     }

@@ -50,6 +50,15 @@
 img {
     max-width: 100%;
 }
+.nsdi-main-topmap-list-item-img{
+    object-fit: cover;
+}
+.nsdi-main-topmap-link a{
+    color: #000000 !important;
+}
+.nsdi-main-topmap-switcher-last, .nsdi-main-topmap-switcher-popular {
+    cursor: pointer;
+}
 @media screen and (max-width: 1200px) {
     .nsdi-signup-form {
         padding: 3rem 6rem;

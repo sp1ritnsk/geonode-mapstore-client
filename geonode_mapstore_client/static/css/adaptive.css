@@ -5,9 +5,11 @@
     box-shadow: none;
     color: #ffffff;
 }
+
 .card-resource-list {
     color: #000;
 }
+
 .nsdi-navbar .navbar-toggler {
     display: none;
 }
@@ -16,7 +18,7 @@
     box-shadow: none;
 }
 
-.gn-main-header .navbar-collapse {
+.msgapi .gn-main-header .navbar-collapse {
     display: flex !important;
     gap: 15px;
     padding-left: 0;
@@ -36,6 +38,32 @@
     margin-bottom: 0;
     min-height: inherit;
 
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.msgapi .badge {
+    color: #000;
+}
+img {
+    max-width: 100%;
+}
+@media screen and (max-width: 1200px) {
+    .nsdi-signup-form {
+        padding: 3rem 6rem;
+    }
+
+    .nsdi-signup-decor-block-title {
+        font-size: 45px;
+    }
+
+    .msgapi .gn-card-grid .gn-card-grid-container {
+        max-width: 100% !important;
+        padding: 0 3rem;
+
+    }
 }
 
 @media screen and (max-width: 1180px) {
@@ -117,6 +145,7 @@
     .nsdi-footer-navbar {
         gap: 15px;
         width: 100% !important;
+        flex-wrap: wrap;
     }
 }
 
@@ -166,6 +195,72 @@
         min-height: 100vh;
         padding-top: 30px;
     }
+
+    .nsdi-signup-decor-block {
+        padding: 8.3125rem 3rem;
+    }
+
+    .nsdi-signup-form {
+        padding: 3rem;
+    }
+
+    .nsdi-signup-decor {
+        padding: 3rem 3rem 3rem 0;
+    }
+
+    .nsdi-signup-decor-block-title {
+        font-size: 35px;
+    }
+
+    .nsdi-signup-decor-block-subtitle {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .nsdi-signup {
+        flex-direction: column-reverse;
+    }
+
+    .nsdi-signup-form,
+    .nsdi-signup-decor {
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .nsdi-signup-decor {
+        padding-bottom: 0
+    }
+
+    .nsdi-signup-decor-block {
+        padding: 3rem;
+        height: auto
+    }
+
+    .nsdi-signup-form-errors {
+        height: auto
+    }
+
+    .nsdi-signup-form-already-block {
+        position: relative;
+        bottom: inherit;
+        left: inherit;
+        width: 100%;
+        margin-top: 20px
+    }
+
+    .msgapi .gn-menu .gn-menu-content {
+        flex-wrap: wrap;
+        gap: 10px
+    }
+
+    .msgapi .gn-menu .gn-menu-fill {
+        flex: 0 0 100%;
+    }
+
+    .msgapi .gn-menu-content>button {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -206,9 +301,7 @@
 
 @media screen and (max-width: 470px) {
     .nsdi-header {
-        padding-top: 80px;
-        height: auto;
-        padding-top: 65px;
+        padding-top: 20px;
         height: auto !important;
     }
 
@@ -216,11 +309,48 @@
         flex-wrap: wrap;
     }
 
-    .nsdi-header {
-        padding-top: 20px;
-    }
-
     .nsdi-main-background {
         padding-top: 80px;
+    }
+
+    .nsdi-actionbar-action,
+    .nsdi-action-username,
+    .nsdi-action-drowndown-button {
+        height: auto !important;
+        margin-bottom: 15px
+    }
+
+    #gn-language-selector-dropdown {
+        margin-bottom: 15px
+    }
+
+    .nsdi-signup-decor-block-title {
+        font-size: 30px;
+    }
+
+    .nsdi-signup-decor-block-subtitle {
+        font-size: 20px;
+    }
+
+    .msgapi .gn-resource-card .card-resource-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .msgapi .gn-resource-card .card-resource-list .card-img-left {
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .msgapi .gn-details-panel-title {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .msgapi .gn-menu-content>div.dropdown {
+        margin-left: 0.3rem;
     }
 }

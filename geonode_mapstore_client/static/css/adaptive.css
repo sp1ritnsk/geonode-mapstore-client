@@ -82,6 +82,9 @@ img {
 .nsdi-footer-navbar-item {
     text-decoration: none;
 }
+.nsdi-signup-form-password-forget{
+    cursor: pointer;
+}
 @media screen and (max-width: 1200px) {
     .btn {
         white-space: normal;

@@ -137,7 +137,7 @@ img {
         margin-top: 15px;
     }
 
-    .nsdi-navbar {
+    .nsdi-navbar.justify-content-between {
         gap: 10px;
         justify-content: flex-start !important;
     }
@@ -304,9 +304,6 @@ img {
     .nsdi-navbar{
         width: max-content
     }
-    .nsdi-action-register{
-        display: none;
-    }
 }
 
 @media screen and (max-width: 620px) {
@@ -349,10 +346,12 @@ img {
     .nsdi-header {
         padding-top: 20px;
         height: auto !important;
+        align-items: flex-start;
     }
 
     .nsdi-actionbar {
         flex-wrap: wrap;
+        gap: 10px;
     }
 
     .nsdi-main-background {

@@ -82,9 +82,6 @@ img {
 .nsdi-footer-navbar-item {
     text-decoration: none;
 }
-.nsdi-signup-form-password-forget{
-    cursor: pointer;
-}
 @media screen and (max-width: 1200px) {
     .btn {
         white-space: normal;
@@ -190,7 +187,7 @@ img {
 @media screen and (max-width: 991px) {
     .nsdi-navbar .navbar-toggler {
         display: block;
-        position: fixed;
+        
         z-index: 99;
         top: 20px;
     }
@@ -299,6 +296,17 @@ img {
     .msgapi .gn-menu-content>button {
         margin-left: 0;
     }
+    .nsdi-main-topmap-switcher{
+        width: auto;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .nsdi-navbar{
+        width: max-content
+    }
+    .nsdi-action-register{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -355,11 +363,11 @@ img {
     .nsdi-action-username,
     .nsdi-action-drowndown-button {
         height: auto !important;
-        margin-bottom: 15px
+        margin-bottom: 0;
     }
 
     #gn-language-selector-dropdown {
-        margin-bottom: 15px
+        margin-bottom: 0;
     }
 
     .nsdi-signup-decor-block-title {

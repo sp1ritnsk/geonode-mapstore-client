@@ -210,9 +210,30 @@
     $.ajax({
       url: "api/datasets/?limit=1",
     }).done(function (data) {
-      console.log('asdf', data)
+      let layers_count = data.meta.total_count;
+      console.log('layers', layers_count);
+    });
+
+    $.ajax({
+      url: "api/maps/?limit=1",
+    }).done(function (data) {
+      let maps_count = data.meta.total_count;
+      console.log('maps', maps_count);
     });
     
+    $.ajax({
+      url: "api/documents/?limit=1",
+    }).done(function (data) {
+      let docs_count = data.meta.total_count;
+      console.log('docs', docs_count);
+    });
+    
+    $.ajax({
+      url: "api/users",
+    }).done(function (data) {
+      let users_count = data.users.length;
+      console.log('users', data, users_count);
+    });
 
   
 

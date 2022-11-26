@@ -58,6 +58,9 @@ body {
 .nsdi-navbar {
   width: 45%;
 }
+.nsdi-navbar-item {
+  text-decoration: none;
+}
 .nsdi-navbar-item.active {
   color: #ffd55e;
   font-weight: 500;

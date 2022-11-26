@@ -344,9 +344,10 @@ img {
 
 @media screen and (max-width: 470px) {
     .nsdi-header {
-        padding-top: 20px;
+        /* padding-top: 20px;
         height: auto !important;
-        align-items: flex-start;
+        align-items: flex-start; */
+        padding: 0 2rem;
     }
 
     .nsdi-actionbar {

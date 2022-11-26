@@ -137,6 +137,8 @@
     $.ajax({
       url: url,
     }).done(function (data) {
+
+      $('#nsdi-main-topmap-list').empty();
       
       data.objects.forEach(element => {
 
@@ -174,8 +176,6 @@
         </a>
         `;
 
-
-        $('#nsdi-main-topmap-list').empty();
         $('#nsdi-main-topmap-list').append($.parseHTML(listItem));
 
       });

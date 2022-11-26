@@ -28,6 +28,7 @@
 .gn-main-header .navbar {
     margin-bottom: 0;
     min-height: inherit;
+    position: static;
 }
 
 .msgapi .gn-main-header .navbar-collapse:before {
@@ -187,7 +188,6 @@ img {
 @media screen and (max-width: 991px) {
     .nsdi-navbar .navbar-toggler {
         display: block;
-        
         z-index: 99;
         top: 20px;
     }
@@ -206,7 +206,7 @@ img {
     }
 
     .gn-main-header .navbar-collapse {
-        position: fixed;
+        position: absolute;
         top: 0px;
         left: 0;
         width: 100%;

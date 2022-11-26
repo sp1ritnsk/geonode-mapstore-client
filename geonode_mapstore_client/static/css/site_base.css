@@ -174,20 +174,19 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.nsdi-main-topmap-switcher-last,
-.nsdi-main-topmap-switcher-popular {
+.nsdi-main-topmap-switcher-item {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.nsdi-main-topmap-switcher-last {
   color: #adadad;
 }
-.nsdi-main-topmap-switcher-popular {
+
+.nsdi-main-topmap-switcher.active {
   background: linear-gradient(90deg, #6f74f2 0%, #6ebef1 80.54%);
   color: #ffffff;
 }
+
 .nsdi-main-topmap-list {
   margin-top: 3.75rem;
   display: grid;

@@ -93,12 +93,14 @@
     </div>
     <div class="nsdi-main-topmap-switcher d-flex">
       <div
-        class="nsdi-main-topmap-switcher-last nsdi-font-size-18 nsdi-font-weight-500"
+        class="nsdi-main-topmap-switcher-item active nsdi-font-size-18 nsdi-font-weight-500"
+        id="topmap-latest"
       >
         {% trans "Last of tops" %}
       </div>
       <div
-        class="nsdi-main-topmap-switcher-popular nsdi-font-size-18 nsdi-font-weight-500"
+        class="nsdi-main-topmap-switcher-item nsdi-font-size-18 nsdi-font-weight-500"
+        id="topmap-popular"
       >
         {% trans "Popular of tops" %}
       </div>
@@ -130,50 +132,79 @@
 </style>
 {% endblock %} {% block extra_script %}
 <script>
-  $.ajax({
-    url: "/api/featured",
-  }).done(function (data) {
-    console.log(data);
-    data.objects.forEach(element => {
 
-      let title = element.title;
-      let abstract = element.abstract;
-      let fullDate = new Date(element.date);
-      let thumbnailUrl = element.thumbnail_url;
-      let link = `/catalogue/#/${element.csw_type}/${element.id}`;
+  function getData(url) {
+    $.ajax({
+      url: url,
+    }).done(function (data) {
       
-      let date = fullDate.getDate() + "." + fullDate.getMonth() + "." + fullDate.getFullYear();
+      data.objects.forEach(element => {
 
-      let listItem = `
-      <a class="nsdi-main-topmap-list-item" href="${link}">
-        <img
-          src="${thumbnailUrl}"
-          class="nsdi-main-topmap-list-item-img"
-        />
-        <div class="nsdi-main-topmap-list-item-info">
-          <div
-            class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
-          >
-            ${title}
-          </div>
-          <div
-            class="nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black"
-          >
-            ${abstract}
-          </div>
-          <div
-            class="nsdi-main-topmap-list-item-info-date nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black d-flex align-items-center"
-          >
-            ${date}
-          </div>
-        </div>
-      </a>
-      `;
+        let title = element.title;
+        let abstract = element.abstract;
+        let fullDate = new Date(element.date);
+        let thumbnailUrl = element.thumbnail_url;
+        let link = `/catalogue/#/${element.csw_type}/${element.id}`;
+        
+        let date = fullDate.getDate() + "." + fullDate.getMonth() + "." + fullDate.getFullYear();
 
-      $('#nsdi-main-topmap-list').append($.parseHTML(listItem));
+        let listItem = `
+        <a class="nsdi-main-topmap-list-item" href="${link}">
+          <img
+            src="${thumbnailUrl}"
+            class="nsdi-main-topmap-list-item-img"
+          />
+          <div class="nsdi-main-topmap-list-item-info">
+            <div
+              class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
+            >
+              ${title}
+            </div>
+            <div
+              class="nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black"
+            >
+              ${abstract}
+            </div>
+            <div
+              class="nsdi-main-topmap-list-item-info-date nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black d-flex align-items-center"
+            >
+              ${date}
+            </div>
+          </div>
+        </a>
+        `;
 
+
+        $('#nsdi-main-topmap-list').empty();
+        $('#nsdi-main-topmap-list').append($.parseHTML(listItem));
+
+      });
+      
     });
+  }
+
+  function getPopularData() {
+    getData("/api/featured");
+  }
+
+  function getLatestData() {
+    getData("/api/latest");
+  }
+
+  $('.nsdi-main-topmap-switcher-item').click(function() {
+    $('.nsdi-main-topmap-switcher-item').removeClass('active');
+    let currentElement = $(this);
+    currentElement.addClass('active');
+
+    if (currentElement.attr('id') == 'topmap-popular') {
+      getPopularData();
+    } else {
+      getLatestData();
+    }
     
-  });
+  })
+
+  getLatestData();
+  
 </script>
 {% endblock extra_script %}

@@ -54,7 +54,10 @@ body {
 .nsdi-font-color-black {
   color: #000000 !important;
 }
-
+.nsdi-action-register,
+.nsdi-action-login {
+  text-decoration: none;
+}
 .nsdi-navbar {
   width: 45%;
 }

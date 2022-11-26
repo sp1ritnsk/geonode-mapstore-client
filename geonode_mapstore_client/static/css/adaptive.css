@@ -206,12 +206,13 @@ img {
 
 @media screen and (max-width: 991px) {
     .nsdi-navbar .navbar-toggler {
+        position: relative;
         display: block;
         z-index: 99;
-        top: 20px;
+        /* top: 20px; */
     }
 
-    .msgapi .gn-main-header .navbar-collapse.collapse:not(.show),
+    .msgapi .gn-main-header .navbar-collapse.collapse:not(.in),
     .gn-main-header .navbar-collapse.collapse {
         display: none !important;
     }

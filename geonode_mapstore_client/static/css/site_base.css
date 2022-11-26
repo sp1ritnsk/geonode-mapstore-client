@@ -180,6 +180,7 @@ body {
   align-items: center;
   justify-content: center;
   color: #adadad;
+  cursor: pointer;
 }
 
 .nsdi-main-topmap-switcher-item.active {

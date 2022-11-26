@@ -83,6 +83,19 @@ img {
 .nsdi-footer-navbar-item {
     text-decoration: none;
 }
+@media screen and (max-width: 1620px) {
+    .nsdi-signup-decor {
+        display: none;
+    }
+
+    .nsdi-signup-form {
+        width: 100%;
+    }
+
+    .nsdi-signup {
+        justify-content: center;
+    }
+}
 @media screen and (max-width: 1200px) {
     .btn {
         white-space: normal;
@@ -107,6 +120,7 @@ img {
         width: auto;
         height: auto;
         padding: 10px 15px;
+        margin-left: 1rem;
     }
 
     .nsdi-font-size-18 {

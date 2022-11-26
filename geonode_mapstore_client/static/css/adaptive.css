@@ -315,7 +315,7 @@ img {
     .msgapi .gn-menu .gn-menu-content {
         /* flex-wrap: wrap;
         gap: 10px */
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .msgapi .gn-menu-content>button {

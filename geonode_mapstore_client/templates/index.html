@@ -205,6 +205,19 @@
   })
 
   getLatestData();
+
+  
+    $.ajax({
+      url: "api/datasets/?limit=1",
+    }).done(function (data) {
+      console.log('asdf', data)
+    });
+    
+
+  
+
+  
+
   
 </script>
 {% endblock extra_script %}

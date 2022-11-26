@@ -10,6 +10,10 @@ body {
   padding: 0;
 }
 
+.fade:not(.show) {
+  opacity: 1 !important;
+}
+
 .nsdi-font-size-64 {
   font-size: 4rem !important;
 }

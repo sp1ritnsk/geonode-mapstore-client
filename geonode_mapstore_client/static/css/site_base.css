@@ -182,7 +182,7 @@ body {
   color: #adadad;
 }
 
-.nsdi-main-topmap-switcher.active {
+.nsdi-main-topmap-switcher-item.active {
   background: linear-gradient(90deg, #6f74f2 0%, #6ebef1 80.54%);
   color: #ffffff;
 }

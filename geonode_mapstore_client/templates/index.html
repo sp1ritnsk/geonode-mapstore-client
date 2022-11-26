@@ -36,12 +36,12 @@
       <div
         class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
       >
-        230+
+        <span id="layers-count"></span>+
       </div>
       <div
         class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
       >
-        созданных слоев
+        {% trans "created layers" %}
       </div>
     </div>
 
@@ -49,12 +49,12 @@
       <div
         class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
       >
-        230+
+        <span id="maps-count"></span>+
       </div>
       <div
         class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
       >
-        созданных слоев
+        {% trans "ready maps" %}
       </div>
     </div>
 
@@ -62,12 +62,12 @@
       <div
         class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
       >
-        230+
+        <span id="docs-count"></span>+
       </div>
       <div
         class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
       >
-        созданных слоев
+        {% trans "documents" %}
       </div>
     </div>
 
@@ -75,12 +75,12 @@
       <div
         class="nsdi-main-number-item-num nsdi-font-size-64 nsdi-font-weight-700"
       >
-        230+
+        <span id="users-count"></span>+
       </div>
       <div
         class="nsdi-main-number-item-text nsdi-font-size-24 nsdi-font-weight-400"
       >
-        созданных слоев
+        {% trans "users" %}
       </div>
     </div>
   </div>
@@ -211,28 +211,28 @@
       url: "api/datasets/?limit=1",
     }).done(function (data) {
       let layers_count = data.meta.total_count;
-      console.log('layers', layers_count);
+      $('#layers-count').html(layers_count);
     });
 
     $.ajax({
       url: "api/maps/?limit=1",
     }).done(function (data) {
       let maps_count = data.meta.total_count;
-      console.log('maps', maps_count);
+      $('#maps-count').html(maps_count);
     });
     
     $.ajax({
       url: "api/documents/?limit=1",
     }).done(function (data) {
       let docs_count = data.meta.total_count;
-      console.log('docs', docs_count);
+      $('#docs-count').html(docs_count);
     });
     
     $.ajax({
       url: "api/users",
     }).done(function (data) {
       let users_count = data.users.length;
-      console.log('users', data, users_count);
+      $('#users-count').html(users_count);
     });
 
   

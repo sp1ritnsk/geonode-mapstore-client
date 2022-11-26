@@ -121,7 +121,12 @@ img {
         width: auto;
         height: auto;
         padding: 10px 5px;
-        gap: 10px;
+        gap: 5px;
+        border: none;
+    }
+
+    .nsdi-action-lang > div {
+        display: none;
     }
 
     .nsdi-main-background {
@@ -144,8 +149,8 @@ img {
     }
 
     .nsdi-actionbar-action {
-        margin-left: 15px !important;
-        gap: 15px !important;
+        margin-left: 0 !important;
+        gap: 0 !important;
     }
 
     .nsdi-main-numbers {

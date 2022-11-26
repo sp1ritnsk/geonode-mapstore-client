@@ -399,9 +399,12 @@ body {
   height: 24px;
   width: 24px;
   background-image: url('/static/img/filter-icon.svg');
-  margin-right: 0.625rem;
+  /* margin-right: 0.625rem; */
   display: inline-block;
   vertical-align: middle;
+}
+.msgapi .gn-menu-fill button > i.fa-filter {
+  display: none;
 }
 .msgapi .gn-menu-fill button span {
   vertical-align: middle;

@@ -272,6 +272,15 @@ img {
 }
 
 @media screen and (max-width: 690px) {
+
+    .msgapi .gn-menu .gn-menu-fill .badge {
+        display: none;
+    }
+
+    .msgapi .gn-menu .gn-menu-fill {
+        flex: auto 0 1;
+    }
+
     .nsdi-signup {
         flex-direction: column-reverse;
     }
@@ -304,12 +313,9 @@ img {
     }
 
     .msgapi .gn-menu .gn-menu-content {
-        flex-wrap: wrap;
-        gap: 10px
-    }
-
-    .msgapi .gn-menu .gn-menu-fill {
-        flex: 0 0 100%;
+        /* flex-wrap: wrap;
+        gap: 10px */
+        justify-content: center;
     }
 
     .msgapi .gn-menu-content>button {
@@ -362,6 +368,15 @@ img {
 }
 
 @media screen and (max-width: 470px) {
+    
+    .msgapi .gn-menu-content > div.dropdown > button > span {
+        display: none;
+    }
+
+    .msgapi .gn-menu-content > div.dropdown > button::before {
+        margin-right: 0;
+    }
+
     .nsdi-header {
         /* padding-top: 20px;
         height: auto !important;

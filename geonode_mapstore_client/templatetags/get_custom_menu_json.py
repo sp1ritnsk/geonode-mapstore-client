@@ -157,20 +157,20 @@ def custom_get_user_menu(context):
         "label": "Log out"
     }
 
-    if is_mobile:
-        return [
-            {
-                # get src of user avatar
-                "image": avatar_url(user),
-                "type": "dropdown",
-                "className": "gn-user-menu-dropdown",
-                "items": [
-                    profile_link,
-                    devider,
-                    logout
-                ]
-            }
-        ]
+    # if is_mobile:
+    #     return [
+    #         {
+    #             # get src of user avatar
+    #             "image": avatar_url(user),
+    #             "type": "dropdown",
+    #             "className": "gn-user-menu-dropdown",
+    #             "items": [
+    #                 profile_link,
+    #                 devider,
+    #                 logout
+    #             ]
+    #         }
+    #     ]
 
     username = user.last_name + " " + user.first_name
     if not username.strip():

@@ -108,7 +108,7 @@
       </div>
     </div>
 
-    <div class="nsdi-main-topmap-list" id="nsdi-main-topmap-list"></div>
+    <div class="nsdi-main-topmap-list row" id="nsdi-main-topmap-list"></div>
 
     <div
       class="nsdi-main-topmap-link text-center nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
@@ -155,29 +155,31 @@
           fullDate.getFullYear();
 
         let listItem = `
-        <a class="nsdi-main-topmap-list-item" href="${link}">
-          <img
-            src="${thumbnailUrl}"
-            class="nsdi-main-topmap-list-item-img"
-          />
-          <div class="nsdi-main-topmap-list-item-info">
-            <div
-              class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
-            >
-              ${title}
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+          <a class="nsdi-main-topmap-list-item" href="${link}">
+            <img
+              src="${thumbnailUrl}"
+              class="nsdi-main-topmap-list-item-img"
+            />
+            <div class="nsdi-main-topmap-list-item-info">
+              <div
+                class="nsdi-font-size-18 nsdi-font-weight-500 nsdi-font-color-black"
+              >
+                ${title}
+              </div>
+              <div
+                class="nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black"
+              >
+                ${abstract}
+              </div>
+              <div
+                class="nsdi-main-topmap-list-item-info-date nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black d-flex align-items-center"
+              >
+                ${date}
+              </div>
             </div>
-            <div
-              class="nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black"
-            >
-              ${abstract}
-            </div>
-            <div
-              class="nsdi-main-topmap-list-item-info-date nsdi-font-size-14 nsdi-font-weight-500 nsdi-font-color-black d-flex align-items-center"
-            >
-              ${date}
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
         `;
 
         $("#nsdi-main-topmap-list").append($.parseHTML(listItem));

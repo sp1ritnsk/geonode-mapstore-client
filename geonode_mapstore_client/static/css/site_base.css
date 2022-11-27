@@ -189,18 +189,21 @@ body {
 }
 
 .nsdi-main-topmap-list {
-  margin-top: 3.75rem;
-  display: grid;
-  grid-template-columns: 25rem 25rem 25rem 25rem;
+  margin-top: 3.75rem !important;
+  /* display: grid; */
+  /* grid-template-columns: 25rem 25rem 25rem 25rem; */
   padding: 0 7.5rem;
-  column-gap: 1.5rem;
-  row-gap: 3rem;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  /* column-gap: 1.5rem; */
+  row-gap: 1.5rem;
 }
 .nsdi-main-topmap-list-item {
   background: #ffffff;
   border-radius: 5px;
   border: 1px solid #e2e2e2;
   position: relative;
+  display: block;
 }
 .nsdi-main-topmap-list-item-img {
   height: 9.375rem;

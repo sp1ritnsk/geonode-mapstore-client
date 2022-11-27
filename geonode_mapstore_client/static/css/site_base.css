@@ -10,8 +10,17 @@ body {
   padding: 0;
 }
 
+body.monitoring,
+body.monitoring *:not(header *) {
+  font-family: Roboto, sans-serif;
+}
+
 .fade:not(.show) {
   opacity: 1 !important;
+}
+
+.dropdown-toggle::after {
+  display: none;
 }
 
 .nsdi-font-size-64 {

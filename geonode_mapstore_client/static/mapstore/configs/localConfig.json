@@ -94,6 +94,14 @@
         "es": {
             "code": "es-ES",
             "description": "Español"
+        },
+        "ru": {
+            "code": "ru",
+            "description": "Русский"
+        },
+        "kk": {
+            "code": "kk",
+            "description": "Казакша"
         }
     },
     "geoNodeConfiguration": {

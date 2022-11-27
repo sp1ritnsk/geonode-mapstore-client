@@ -1,5 +1,5 @@
 {
-    "locale": "en-US",
+    "locale": "ru",
     "messages": {
         "Language": "Язык",
         "msgId0": "{имя} взять {numPhotos, множественное число, =0 {нет фото} =1 {одно фото} прочее {# фото}} {takenDate, date, long}.",

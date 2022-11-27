@@ -406,6 +406,10 @@ h3 {
     padding: 0 2rem;
   }
 
+  .msgapi .gn-menu-content > button {
+    display: none;
+  }
+
   .nsdi-actionbar {
     flex-wrap: wrap;
     gap: 10px;

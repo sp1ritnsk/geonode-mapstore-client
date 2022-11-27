@@ -2,7 +2,7 @@
     "locale": "ru",
     "messages": {
         "Language": "Язык",
-        "msgId0": "{имя} взять {numPhotos, множественное число, =0 {нет фото} =1 {одно фото} прочее {# фото}} {takenDate, date, long}.",
+        "msgId0": "{имя} взять {numPhotos, plural, =0 {нет фото} =1 {одно фото} other {# фото}} {takenDate, date, long}.",
         "htmlTest": "{имя} {фамилия}",
         "about_title": "О <название продукта>",
         "aboutLbl": "О <название продукта>",
@@ -200,14 +200,14 @@
         "permissions": "Разрешения",
         "global": {
             "colors": {
-                "red": "{число, множественное число, =0 {Красный =1 {Красный} другие {Красные}}",
-                "blue": "{число, множественное число, =0 {Синий} =1 {Синий} другие {Синие}}",
-                "green": "{число, множественное число, =0 {Зеленый} =1 {Зеленый} другие {Зеленые}}",
-                "gray": "{число, множественное число, =0 {Серый} =1 {Серый} другие {Серые}}",
-                "jet": "{число, множественное число, =0 {Черный} =1 {Черный} другие {Черные}}",
-                "brown": "{число, множественное число, =0 {Коричневый} =1 {Коричневый} другие {Коричневые}}",
-                "purple": "{число, множественное число, =0 {Фиолетовый} =1 {Фиолетовый} другие {Фиолетовые}}",
-                "random": "{число, множественное число, =0 {Произвольный} =1 {Произвольный} другие {Произвольные}}",
+                "red": "{number, plural, =0 {Красный} =1 {Красный} other {Красные}}",
+                "blue": "{number, plural, =0 {Синий} =1 {Синий} other {Синие}}",
+                "green": "{number, plural, =0 {Зеленый} =1 {Зеленый} other {Зеленые}}",
+                "gray": "{number, plural, =0 {Серый} =1 {Серый} other {Серые}}",
+                "jet": "{number, plural, =0 {Черный} =1 {Черный} other {Черные}}",
+                "brown": "{number, plural, =0 {Коричневый} =1 {Коричневый} other {Коричневые}}",
+                "purple": "{number, plural, =0 {Фиолетовый} =1 {Фиолетовый} other {Фиолетовые}}",
+                "random": "{number, plural, =0 {Произвольный} =1 {Произвольный} other {Произвольные}}",
                 "orrd": "OrRd",
                 "pubu": "PuBu",
                 "bupu": "BuPu",
@@ -1346,8 +1346,8 @@
             "getWMSLink": "Получить WMS-ссылку",
             "error": "Произошла ошибка при загрузке записей из каталога",
             "pageInfo": "Результаты {start}-{end} из {total}",
-            "resultInfo": "{total, множественное число, =0 {No items} =1 {{total} Пункт {total}} другие {{start}-{end} of {total}}}",
-            "pageInfoInfinite": "{total, множественное число, =undefined {} =0 {No results} =1 {{total} из {total} matched} другие {Loaded {loaded} из {total} matched}}",
+            "resultInfo": "{total, plural, =0 {No items} =1 {{total} Пункт {total}} other {{start}-{end} of {total}}}",
+            "pageInfoInfinite": "{total, plural, =undefined {} =0 {No results} =1 {{total} из {total} matched} other {Loaded {loaded} из {total} matched}}",
             "noRecordsMatched": "Ни одна запись не соответствует",
             "wmsGetCapLink": "WMS",
             "wfsGetCapLink": "WFS",
@@ -1542,10 +1542,10 @@
             "selectall": "Выбрать все",
             "deselectall": "Очистить выделение",
             "backtosearch": "Вернуться к поиску",
-            "resultInfo": "{total, множественное число, =0 {No items} =1 {{total} из {total}} другие {{start}-{end} из  {total}}}",
-            "resultInfoVirtual": "{total, множественное число, =0 {No items} =1 {{total} Item} другие {{total} Items}}",
+            "resultInfo": "{total, plural, =0 {No items} =1 {{total} из {total}} other {{start}-{end} из  {total}}}",
+            "resultInfoVirtual": "{total, plural, =0 {No items} =1 {{total} Item} other {{total} Items}}",
             "selectedInfo": "( {selected} Selected )",
-            "pageInfo": "{totalPages, множественное число, =0 {No pages} =1 {Page {totalPages} из {totalPages}} другие {Page {page}из {totalPages}}}",
+            "pageInfo": "{totalPages, plural, =0 {No pages} =1 {Page {totalPages} из {totalPages}} other {Page {page}из {totalPages}}}",
             "pagination": {
                 "page": "Страница",
                 "of": "из",
@@ -2178,12 +2178,12 @@
                 "step": {
                     "tooltip": "Когда опция «Привязать к направляющему слою» отключена, вы можете настроить шаг анимации.",
                     "label": "Шаг анимации",
-                    "year": "{число, множественное число, =0 {Year} =1 {Year} другие {Years}}",
-                    "week": "{число, множественное число, =0 {Week} =1 {Week} другие {Weeks}}",
-                    "day": "{число, множественное число, =0 {Day} =1 {Day} другие {Days}}",
-                    "hour": "{число, множественное число, =0 {Hour} =1 {Hour} другие {Hours}}",
-                    "minute": "{число, множественное число, =0 {Minute} =1 {Minute} другие {Minutes}}",
-                    "second": "{число, множественное число, =0 {Second} =1 {Second} другие {Seconds}}"
+                    "year": "{number, plural, =0 {Year} =1 {Year} other {Years}}",
+                    "week": "{number, plural, =0 {Week} =1 {Week} other {Weeks}}",
+                    "day": "{number, plural, =0 {Day} =1 {Day} other {Days}}",
+                    "hour": "{number, plural, =0 {Hour} =1 {Hour} other {Hours}}",
+                    "minute": "{number, plural, =0 {Minute} =1 {Minute} other {Minutes}}",
+                    "second": "{number, plural, =0 {Second} =1 {Second} other {Seconds}}"
                 },
                 "mode": {
                     "title": "Режим",
@@ -2540,7 +2540,7 @@
                 "removeResourceTitle": "Вы уверены?",
                 "confirmRemoveResource": "Вы хотите удалить этот медиа-ресурс из истории?",
                 "confirmRemoveUsedResource": "Этот ресурс также будет удален из всех разделов/содержимого, где он используется, оставив их пустыми. Вы хотите удалить его из истории?",
-                "resultsCount": "{count} из {total} {total, множественное число, один {Result} другие {Results}}"
+                "resultsCount": "{count} из {total} {total, plural, one {Result} other {Results}}"
             },
             "imageList": {
                 "emptyList": "Нажмите на кнопку плюс, чтобы добавить новое изображение. См. руководство пользователя <a href='https://mapstore.readthedocs.io/en/latest/user-guide/media-editor-window/#images' target='_blank'/>здесь</a>"

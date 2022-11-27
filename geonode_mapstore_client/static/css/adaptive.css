@@ -212,6 +212,18 @@ img {
         /* top: 20px; */
     }
 
+    .msgapi .gn-menu .gn-menu-fill .badge {
+        display: none;
+    }
+
+    .msgapi .gn-filters-menu .gn-menu-list button .gn-content-responsive > span > span {
+        display: none;
+    }
+
+    .msgapi .gn-filters-menu .gn-menu-list button::after {
+        margin-left: 0;
+    }
+
     .msgapi .gn-main-header .navbar-collapse.collapse:not(.in),
     .gn-main-header .navbar-collapse.collapse {
         display: none !important;
@@ -274,10 +286,6 @@ img {
 
 @media screen and (max-width: 690px) {
 
-    .msgapi .gn-menu .gn-menu-fill .badge {
-        display: none;
-    }
-
     .msgapi .gn-menu .gn-menu-fill {
         flex: auto 0 1;
     }
@@ -317,6 +325,7 @@ img {
         /* flex-wrap: wrap;
         gap: 10px */
         justify-content: space-between;
+        padding: 0;
     }
 
     .msgapi .gn-menu-content>button {
@@ -333,6 +342,14 @@ img {
 }
 
 @media screen and (max-width: 620px) {
+    .msgapi .gn-menu-content > div.dropdown > button > span {
+        display: none;
+    }
+
+    .msgapi .gn-menu-content > div.dropdown > button::before {
+        margin-right: 0;
+    }
+
     .nsdi-main-background-buttons {
         gap: 1rem;
         flex-wrap: wrap;
@@ -370,13 +387,7 @@ img {
 
 @media screen and (max-width: 470px) {
     
-    .msgapi .gn-menu-content > div.dropdown > button > span {
-        display: none;
-    }
-
-    .msgapi .gn-menu-content > div.dropdown > button::before {
-        margin-right: 0;
-    }
+    
 
     .nsdi-header {
         /* padding-top: 20px;

@@ -457,6 +457,10 @@ body {
   color: #262626;
 }
 
+.msgapi .gn-filters-menu .gn-menu-list button .gn-content-responsive > span > i.fa-plus {
+  display: none;
+}
+
 .msgapi .gn-menu-content > button i {
   display: none;
 }

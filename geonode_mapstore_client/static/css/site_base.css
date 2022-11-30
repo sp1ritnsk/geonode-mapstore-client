@@ -397,7 +397,7 @@ body.monitoring *:not(header *) {
   max-width: 100%;
 }
 .msgapi .gn-fixed-card-grid .gn-grid-container {
-  overflow: visible !important;
+  overflow: auto !important;
 }
 .msgapi .gn-card-grid .gn-card-grid-container > ul > li > .gn-resource-card {
   box-shadow: none;

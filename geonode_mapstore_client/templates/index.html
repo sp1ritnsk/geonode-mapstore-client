@@ -140,7 +140,7 @@
     }).done(function (data) {
       $("#nsdi-main-topmap-list").empty();
 
-      data.objects.forEach((element) => {
+      data.objects.slice(0, 8).forEach((element) => {
         let title = element.title;
         let abstract = element.abstract;
         let fullDate = new Date(element.date);

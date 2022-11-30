@@ -19,6 +19,13 @@ body.monitoring *:not(header *) {
   opacity: 1 !important;
 }
 
+.nsdi-main-topmap-list-item-abstract > p,
+.nsdi-main-topmap-list-item-title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .dropdown-toggle::after {
   display: none;
 }

@@ -792,3 +792,8 @@ body.monitoring *:not(header *) {
 .card-resource-list {
   color: #000;
 }
+
+#mapstore-map-footer > #mapstore-map-footer-container > #mapstore-scalebox-container > #mapstore-scalebox > .form-inline > .form-group > .form-control,
+#mapstore-map-footer > #mapstore-map-footer-container > #mapstore-mouseposition > .form-group > #mapstore-crsselector {
+  appearance: auto;
+}

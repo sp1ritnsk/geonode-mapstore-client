@@ -289,7 +289,16 @@
             "embedgeostory": "Внедрить эту геосторию",
             "embeddocument": "Внедрить этот документ",
             "embeddashboard": "Внедрить этот дэшборд",
-            "directLink": "Прямая ссылка"
+            "directLink": "Прямая ссылка",
+            "owner": "Владелец",
+            "created": "Дата создания",
+            "published": "Дата публикации",
+            "lastModified": "Дата последних изменения",
+            "resourceType": "Тип ресурса",
+            "pointOfContact": "Контактное лицо",
+            "regions": "Регионы",
+            "language": "Язык",
+            "supplementalInformation": "Дополнительная информация"
         }
     }
 }

@@ -24,6 +24,7 @@ import { mapSelector } from '@mapstore/framework/selectors/map';
 import isArray from 'lodash/isArray';
 import isObject from 'lodash/isObject';
 import isString from 'lodash/isString';
+import isFunction from 'lodash/isFunction';
 
 import url from 'url';
 import axios from '@mapstore/framework/libs/ajax';
@@ -162,6 +163,8 @@ function setupLocale(locale) {
         });
 }
 
+let apiPluginsConfig;
+
 export function setupConfiguration({
     localConfig,
     user,
@@ -203,6 +206,18 @@ export function setupConfiguration({
     // globlal window interface to interact with the django page
     const actionTrigger = generateActionTrigger(LOCATION_CHANGE);
     // similar implementation of MapStore2 API without the create part
+    /**
+     * @global
+     * @property {function} getMapState return the map state if available
+     * @property {function} triggerAction dispatch an action
+     * @property {function} onAction add listener to an action
+     * @property {function} offAction remove listener to an action
+     * @example
+     * // access to mapstore api
+     * window.addEventListener('mapstore:ready', function(event) {
+     *  const msAPI = event.detail;
+     * });
+     */
     window.MapStoreAPI = {
         ready: true,
         getMapState: function() {
@@ -219,8 +234,13 @@ export function setupConfiguration({
                 .filter((l) => l !== listener);
             actionListeners[type] = listeners;
         },
-        setGetFeatureInfoViewer: setViewer
+        setGetFeatureInfoViewer: setViewer,
+        setPluginsConfig: (pluginsConfig) => { apiPluginsConfig = pluginsConfig; }
     };
+    const mapstoreReady = new CustomEvent('mapstore:ready', {
+        detail: window.MapStoreAPI
+    });
+    window.dispatchEvent(mapstoreReady);
     if (window.onInitMapStoreAPI) {
         window.onInitMapStoreAPI(window.MapStoreAPI, geoNodePageConfig);
     }
@@ -234,6 +254,7 @@ export function setupConfiguration({
             pluginsConfigKey: query.config || geoNodePageConfig.pluginsConfigKey,
             mapType: geoNodePageConfig.mapType,
             settings: localConfig.geoNodeSettings,
+            MapStoreAPI: window.MapStoreAPI,
             onStoreInit: (store) => {
                 store.addActionListener((action) => {
                     const act = action.type === 'PERFORM_ACTION' && action.action || action; // Needed to works also in debug
@@ -250,12 +271,8 @@ export function setupConfiguration({
         }));
 }
 
-export function getThemeLayoutSize(width) {
-    if (width < 968) {
-        return 'sm';
-    }
-    if (width < 1400) {
-        return 'md';
-    }
-    return 'lg';
-}
+export const getPluginsConfigOverride = (pluginsConfig) => isFunction(apiPluginsConfig)
+    ? apiPluginsConfig(pluginsConfig)
+    : isObject(apiPluginsConfig)
+        ? apiPluginsConfig
+        : pluginsConfig;

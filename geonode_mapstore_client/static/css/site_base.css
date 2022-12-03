@@ -15,9 +15,9 @@ body.monitoring *:not(header *) {
   font-family: Roboto, sans-serif;
 }
 
-.fade:not(.show) {
+/* .fade:not(.show) {
   opacity: 1 !important;
-}
+} */
 
 .nsdi-main-topmap-list-item-abstract > p,
 .nsdi-main-topmap-list-item-title {
@@ -796,4 +796,14 @@ body.monitoring *:not(header *) {
 #mapstore-map-footer > #mapstore-map-footer-container > #mapstore-scalebox-container > #mapstore-scalebox > .form-inline > .form-group > .form-control,
 #mapstore-map-footer > #mapstore-map-footer-container > #mapstore-mouseposition > .form-group > #mapstore-crsselector {
   appearance: auto;
+}
+
+.modal-header h1,
+.modal-header h2,
+.modal-header h3,
+.modal-header h4,
+.modal-header h5,
+.modal-header h6 {
+  font-size: 1.2rem;
+  color: white;
 }

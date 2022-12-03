@@ -47,7 +47,8 @@ import {
     setupConfiguration,
     initializeApp,
     getPluginsConfiguration,
-    storeEpicsCache
+    storeEpicsCache,
+    getPluginsConfigOverride
 } from '@js/utils/AppUtils';
 import { ResourceTypes } from '@js/utils/ResourceUtils';
 import { requestResourceConfig } from '@js/actions/gnresource';
@@ -72,22 +73,19 @@ const requires = {
     ReactSwipe,
     SwipeHeader
 };
+import { MAP_ROUTES, appRouteComponentTypes } from '@js/utils/AppRoutesUtils';
 
 const DEFAULT_LOCALE = {};
 const ConnectedRouter = connect((state) => ({
-    locale: state?.locale || DEFAULT_LOCALE
+    locale: state?.locale || DEFAULT_LOCALE,
+    user: state?.security?.user || null
 }))(Router);
 
-const routes = [
-    {
-        name: 'map-viewer',
-        path: '/',
-        pageConfig: {
-            resourceType: ResourceTypes.MAP
-        },
-        component: ViewerRoute
-    }
-];
+const viewer = {
+    [appRouteComponentTypes.VIEWER]: ViewerRoute
+};
+
+const routes = MAP_ROUTES.map(({component, ...config}) => ({...config, component: viewer[component]}));
 
 initializeApp();
 
@@ -150,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     }
                                 },
                                 themeCfg: null,
-                                pluginsConfig: getPluginsConfiguration(localConfig.plugins, pluginsConfigKey),
+                                pluginsConfig: getPluginsConfigOverride(getPluginsConfiguration(localConfig.plugins, pluginsConfigKey)),
                                 lazyPlugins: pluginsDefinition.lazyPlugins,
                                 pluginsDef: {
                                     plugins: {

@@ -29,7 +29,8 @@ import {
     setupConfiguration,
     initializeApp,
     getPluginsConfiguration,
-    storeEpicsCache
+    storeEpicsCache,
+    getPluginsConfigOverride
 } from '@js/utils/AppUtils';
 import { ResourceTypes } from '@js/utils/ResourceUtils';
 import pluginsDefinition from '@js/plugins/index';
@@ -39,6 +40,7 @@ const requires = {
     ReactSwipe,
     SwipeHeader
 };
+import { GEOSTORY_ROUTES, appRouteComponentTypes } from '@js/utils/AppRoutesUtils';
 
 registerMediaAPI('geonode', geoNodeMediaApi);
 
@@ -47,17 +49,15 @@ import 'react-select/dist/react-select.css';
 
 const DEFAULT_LOCALE = {};
 const ConnectedRouter = connect((state) => ({
-    locale: state?.locale || DEFAULT_LOCALE
+    locale: state?.locale || DEFAULT_LOCALE,
+    user: state?.security?.user || null
 }))(Router);
 
-const routes = [{
-    name: 'geostory',
-    path: '/',
-    pageConfig: {
-        resourceType: ResourceTypes.GEOSTORY
-    },
-    component: ViewerRoute
-}];
+const viewer = {
+    [appRouteComponentTypes.VIEWER]: ViewerRoute
+};
+
+const routes = GEOSTORY_ROUTES.map(({component, ...config}) => ({...config, component: viewer[component]}));
 
 initializeApp();
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             main({
                                 targetId,
                                 appComponent: withRoutes(routes)(ConnectedRouter),
-                                pluginsConfig: getPluginsConfiguration(localConfig.plugins, pluginsConfigKey),
+                                pluginsConfig: getPluginsConfigOverride(getPluginsConfiguration(localConfig.plugins, pluginsConfigKey)),
                                 loaderComponent: MainLoader,
                                 lazyPlugins: pluginsDefinition.lazyPlugins,
                                 pluginsDef: {

@@ -27,7 +27,8 @@ import {
     setupConfiguration,
     initializeApp,
     getPluginsConfiguration,
-    storeEpicsCache
+    storeEpicsCache,
+    getPluginsConfigOverride
 } from '@js/utils/AppUtils';
 import { ResourceTypes } from '@js/utils/ResourceUtils';
 import pluginsDefinition from '@js/plugins/index';
@@ -39,24 +40,20 @@ const requires = {
     ReactSwipe,
     SwipeHeader
 };
+import { DASHBOARD_ROUTES, appRouteComponentTypes } from '@js/utils/AppRoutesUtils';
 import '@js/observables/persistence';
 
 const DEFAULT_LOCALE = {};
 const ConnectedRouter = connect((state) => ({
-    locale: state?.locale || DEFAULT_LOCALE
+    locale: state?.locale || DEFAULT_LOCALE,
+    user: state?.security?.user || null
 }))(Router);
 
-const routes = [{
-    name: 'dashboard_embed',
-    path: [
-        '/'
-    ],
-    pageConfig: {
-        resourceType: ResourceTypes.DASHBOARD
-    },
-    component: ViewerRoute
-}];
+const viewer = {
+    [appRouteComponentTypes.VIEWER]: ViewerRoute
+};
 
+const routes = DASHBOARD_ROUTES.map(({component, ...config}) => ({...config, component: viewer[component]}));
 
 initializeApp();
 
@@ -93,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 main({
                                     targetId,
                                     appComponent: withRoutes(routes)(ConnectedRouter),
-                                    pluginsConfig: getPluginsConfiguration(localConfig.plugins, pluginsConfigKey),
+                                    pluginsConfig: getPluginsConfigOverride(getPluginsConfiguration(localConfig.plugins, pluginsConfigKey)),
                                     loaderComponent: MainLoader,
                                     lazyPlugins: pluginsDefinition.lazyPlugins,
                                     pluginsDef: {

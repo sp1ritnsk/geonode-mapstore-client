@@ -18,10 +18,7 @@ import {
     FullScreenActionButton,
     FilterLayerActionButton
 } from '@js/plugins/actionnavbar/buttons';
-import { getMetadataUrl,
-    getMetadataDetailUrl,
-    resourceHasPermission,
-    canCopyResource } from '@js/utils/ResourceUtils';
+import { getPluginsContext } from '@js/utils/PluginsContextUtils';
 
 const EXCLUDED_EPICS_NAMES = [
     'loadGeostoryEpic',
@@ -435,17 +432,20 @@ export const plugins = {
     DublinCoreDownloadPlugin: toLazyPlugin(
         'DublinCoreDownload',
         () => import(/* webpackChunkName: 'plugins/iso-download-plugin' */ '@js/plugins/downloads/DublinCoreDownload')
+    ),
+    ResourcesGridPlugin: toLazyPlugin(
+        'ResourcesGrid',
+        () => import(/* webpackChunkName: 'plugins/resources-grid' */ '@js/plugins/ResourcesGrid')
+    ),
+    FeaturedResourcesGridPlugin: toLazyPlugin(
+        'FeaturedResourcesGrid',
+        () => import(/* webpackChunkName: 'plugins/featured-resources-grid' */ '@js/plugins/FeaturedResourcesGrid')
     )
 };
 
 const pluginsDefinition = {
     plugins,
-    requires: {
-        getMetadataUrl,
-        getMetadataDetailUrl,
-        resourceHasPermission,
-        canCopyResource
-    },
+    requires: getPluginsContext(),
     epics: {},
     reducers: {}
 };

@@ -295,7 +295,16 @@
             "embeddashboard": "Осы бақылау тақтасын салу",
             "directLink": "Тікелей сілтеме",
             "iso": "ISO Metadata",
-            "dublinCore": "Dublin Core Metadata"
+            "dublinCore": "Dublin Core Metadata",
+            "owner": "Владелец",
+            "created": "Дата создания",
+            "published": "Дата публикации",
+            "lastModified": "Дата последних изменения",
+            "resourceType": "Тип ресурса",
+            "pointOfContact": "Контактное лицо",
+            "regions": "Регионы",
+            "language": "Язык",
+            "supplementalInformation": "Дополнительная информация"
         }
     }
 }

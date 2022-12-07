@@ -807,3 +807,7 @@ body.monitoring *:not(header *) {
   font-size: 1.2rem;
   color: white;
 }
+
+.dropdown-menu {
+  max-width: none !important;
+}

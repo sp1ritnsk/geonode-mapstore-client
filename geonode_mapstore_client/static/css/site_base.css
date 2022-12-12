@@ -811,3 +811,14 @@ body.monitoring *:not(header *) {
 .dropdown-menu {
   max-width: none !important;
 }
+
+.modal-dialog {
+  max-width: none;
+}
+.modal-footer {
+  display: block;
+}
+
+.msgapi .btn:focus {
+  box-shadow: none;
+}
